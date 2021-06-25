@@ -5,8 +5,8 @@ export default class Products extends Component {
     render() {
         let data= [{name:"botella" , price:"10"},
                    {name:"cosa" , price:"3"},
-                   {name:"silla" , price:"20"},
-                   {name:"queso" , price:"4"}
+                   {name:"silla" , price:"20", brand:"Ikea"},
+                   {name:"queso" , price:"4", brand:"García Vaquero"}
                 ]
         return (
             <article>
