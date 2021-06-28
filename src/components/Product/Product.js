@@ -13,6 +13,7 @@ export default class Product extends Component {
     render() {
 
         let {name,price,brand} = this.props.details //destructuring
+        console.log(name)
         return (
             <section>
                 <h3>OFERTA</h3>

@@ -1,0 +1,4 @@
+    [{"name":"botella" , "price":"10"},
+    {"name":"cosa" , "price":"3"},
+    {"name":"silla" , "price":"20", "brand":"Ikea"},
+    {"name":"queso" , "price":"4", "brand":"García Vaquero"}]

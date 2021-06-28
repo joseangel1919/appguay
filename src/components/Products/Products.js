@@ -1,20 +1,51 @@
 import React, { Component } from 'react'
 import Product from '../Product/Product'
+import data from '../../data.json'
 
 export default class Products extends Component {
+
+constructor(props) {
+    super(props)
+
+    this.state = {
+        name:"--",
+        products:data
+    }
+}
+
+
+
+    renderProducts = () => this.state.products.map((product,i)=> <Product details={product} key= {i}/>)
+    
+    addProduct = () => {
+        let name = prompt("Introduce nombre")
+        let price = prompt("Introduce precio")
+        
+        let product = {name,price};
+
+        this.setState({name})
+        this.setState({products: [...this.state.products,product]})
+
+
+        alert(`Producto añadido: ${name} ${price} €`)
+    
+    }
+
+    removeAllProducts = () => this.setState({products:[],name:"--"})
+
+
+
+    
+
+    
     render() {
-        let data= [{name:"botella" , price:"10"},
-                   {name:"cosa" , price:"3"},
-                   {name:"silla" , price:"20", brand:"Ikea"},
-                   {name:"queso" , price:"4", brand:"García Vaquero"}
-                ]
         return (
             <article>
-                <Product details={data[0]}/>
-                <Product details={data[1]}/>
-                <Product details={data[2]}/>
-                <Product details={data[3]}/>
+                {this.renderProducts()}
+                <button onClick= {this.addProduct}>Añadir Producto</button>
+                <button onClick= {this.removeAllProducts}>Borrar todo</button>
                 
+                <p>Último añadido: {this.state.name}</p>
             </article>
         )
     }
