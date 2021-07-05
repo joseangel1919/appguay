@@ -3,6 +3,7 @@ import { Route,Switch } from 'react-router-dom';
 import Products from '../Products/Products'
 import Staff from '../Staff';
 import Contact from '../Contact';
+import PokeList from '../PokeList'
 
 
 export default class Main extends Component {
@@ -12,6 +13,7 @@ export default class Main extends Component {
                 <Switch>
                 <Route exact path="/" component={Products}  />
                 <Route path="/staff" component={Staff}  />
+                <Route path="/pokelist" component={PokeList} />
                 <Route path="/contact" component={Contact} />
                 
                 

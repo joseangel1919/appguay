@@ -1,8 +1,9 @@
+import React, { Component } from 'react';
 import axios from 'axios';
 
-import React, { Component } from 'react';
 import './Staff.css';
-import PokemonApi from '../PokemonApi'
+import PokemonsApi from '../PokemonApi'
+
 
 class Staff extends Component {
   constructor(props) {
@@ -13,21 +14,26 @@ class Staff extends Component {
   }
 
   async componentDidMount() {
-    
-    setTimeout(async ()=>{
+    // Simular un retardo del fetch
+    setTimeout(async () => { 
+      
+      const res = await axios.get('https://pokeapi.co/api/v2/pokemon');
 
-    const res = await axios.get('https://pokeapi.co/api/v2/pokemon');
-    
-    this.setState({
-      pokeLista: res.data.results
-    })
-    console.log('componentDidMount');
-  },2000);}
+      this.setState({
+        pokeLista: res.data.results
+      })
+      console.log('componentDidMount');
+
+    }, 2000);
+  }
 
   render() {
     console.log('RENDER')
     return (
-      <PokemonApi lista={this.state.pokeLista}></PokemonApi>
+        <>
+          <h2>Staff</h2>
+          <PokemonsApi lista={this.state.pokeLista}></PokemonsApi>
+        </>
     );
   }
 }
