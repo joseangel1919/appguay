@@ -1,11 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component, useContext } from 'react'
+import { ColorContext } from '../../context/ColorContext';
+
 import Nav from '../Nav/Nav'
 import './Header.css'
 
-export default class Header extends Component {
-    render() {
-        return (
-            <header className="main-header">
+function Header() {
+    const ctx = useContext(ColorContext);
+
+    return (
+        <header className="main-header" style={{ backgroundColor: ctx.colors.blue }}>
                 <div className="container">
                     <h1 className="mh-logo">
                         <img className="logo" src="http://flexbox.ninja/assets/images/logo.svg"  alt="Flexbox.ninja"/>
@@ -13,6 +16,12 @@ export default class Header extends Component {
                     <Nav />
                 </div>
             </header>
-        )
-    }
+            
+    
+    )
 }
+
+export default Header
+
+
+
