@@ -17,7 +17,7 @@ const HooksUseEffect = () => {
     },[]);*/
 
 
-    const data = useFetch('https://pokeapi.co/api/v2/pokemon')
+    const pokemons = useFetch('https://pokeapi.co/api/v2/pokemon')
 
     return (
         <>

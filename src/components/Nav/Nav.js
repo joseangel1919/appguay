@@ -32,6 +32,9 @@ function Nav() {
       <li>
         <Link to="/login">Login</Link>
       </li>
+      <li>
+        <Link to="/redux">Redux</Link>
+      </li>
       {userCtx.name?<li>
             <span>Hola {userCtx.name}</span>
             <button onClick={userCtx.logout}>Logout</button>
