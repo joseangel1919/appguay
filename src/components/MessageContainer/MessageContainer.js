@@ -1,32 +1,32 @@
-import React,{useState} from "react";
-import { connect } from "react-redux";
-import {writeMessage} from "../../redux";
+import React,{useState}from "react";
+import {connect} from 'react-redux';
+import { writeMessage } from "../../redux";
 
 const MessageContainer = ({message,writeMessage}) => {
 
-const [text, setText] = useState("")
+const [text, setText] = useState("") // guarda lo que pongas en el input de texto
 
   return <div>
-    <h2>Mensaje Recibido.</h2>
-    <input type="text" name="" id="" onChange={e=>setText(e.target.value)}></input>
-    <button onClick={()=>writeMessage(text)}>Enviar Mensaje</button>
+    <h2>Mensaje recibido:{message}</h2>
+    <input type="text" onChange={e=>setText(e.target.value)} />
+    <button onClick={()=>writeMessage(text)}>Enviar mensaje</button>
   </div>;
 };
 
 const mapStateToProps = state => {
-  return {message:state.message}
+  console.log("*****************")
+  console.log(state.messageReducer.message)
+  return {message:state.messageReducer.message}
 }
 
+
 const mapDispatchToProps = dispatch => {
-  // nombre de las props para ejecutar y llamar a una action
   return {
-      writeMessage: (message) => dispatch(writeMessage(message)),
-      
+      writeMessage: (message) => dispatch(writeMessage(message))
   }
 }
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-
 )(MessageContainer)
