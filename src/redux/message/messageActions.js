@@ -1,4 +1,4 @@
-import {WRITE_MESSAGE} from './messageTypes'
+import {WRITE_MESSAGE,DELETE_MESSAGE} from './messageTypes'
 
 export const writeMessage = (message="") =>{
     return {
@@ -7,3 +7,8 @@ export const writeMessage = (message="") =>{
     }
 }
 
+export const deleteMessage = () =>{
+    return {
+        type: DELETE_MESSAGE
+    }
+}

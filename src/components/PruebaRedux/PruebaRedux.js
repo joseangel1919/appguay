@@ -11,7 +11,6 @@ function PruebaRedux() {
             <HooksCounterContainer/>
             <MessageContainer/>
             <UserContainer/>
-
         </div>
     )
 }

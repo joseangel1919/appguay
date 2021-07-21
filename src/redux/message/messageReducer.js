@@ -1,21 +1,22 @@
-import {WRITE_MESSAGE} from './messageTypes';
+import { WRITE_MESSAGE, DELETE_MESSAGE } from './messageTypes';
 
 const INITIAL_STATE = {
-    message: ""
+    message: "--"
 }
 
-export default function messageReducer(state = INITIAL_STATE, action){
-    //console.log("ESTADO Y ACCION")
-    //console.log(state, action)
+export default function messageReducer(state = INITIAL_STATE, action) {
     switch (action.type) {
         case WRITE_MESSAGE:
             return {
                 ...state,
-                message:action.payload
-                
+                message: action.payload
+            }
+        case DELETE_MESSAGE:
+            return {
+                ...state,
+                message: INITIAL_STATE.message
             }
         default:
             return state
-        
     }
-  }
+}
