@@ -49,6 +49,7 @@ function App() {
        </ColorContext.Provider>
        </BrowserRouter>
        <Footer/>
+       
       </div>
     </Provider>
   );
