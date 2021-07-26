@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import Button from '@material-ui/core/Button';
 import {ColorContext} from '../../context/ColorContext';
 import './Product.css'
 
@@ -19,7 +20,10 @@ function Product(props) {
             <p>Marca: { brand || data.brand }</p>
             <img src={url || data.url} className="img" alt="" />
         </div>
-        <button className="button" onClick={props.remove} style={{ backgroundColor: ctx.yellow }}>Borrar</button>
+        <Button variant="contained" color="primary">
+      BORRAR
+    </Button>
+        {/*<button className="button" onClick={props.remove} style={{ backgroundColor: ctx.yellow }}>Borrar</button>*/}
     </section>
     )
 }
