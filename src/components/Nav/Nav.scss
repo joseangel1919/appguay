@@ -1,7 +1,4 @@
-/*
- * Nav css File
-*/
-
+@import '../../Sass/colors'; 
 
 
  .main-nav ul {
@@ -19,9 +16,10 @@
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: #343534;
+    color: $ok-color;
     text-decoration: none;
 }
+
 .main-nav span {
     display: inline-block;
     font-weight: bold;

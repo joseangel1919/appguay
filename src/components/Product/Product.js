@@ -15,15 +15,13 @@ function Product(props) {
         <section>
         <div>
             <h3>OFERTA</h3>
-            <p>Producto:{name}</p>
             <p>Precio: {price} €</p>
             <p>Marca: { brand || data.brand }</p>
             <img src={url || data.url} className="img" alt="" />
         </div>
-        <Button variant="contained" color="primary">
-      BORRAR
-    </Button>
-        {/*<button className="button" onClick={props.remove} style={{ backgroundColor: ctx.yellow }}>Borrar</button>*/}
+        <Button variant="contained" color="secondary" onClick={props.remove}>Borrar</Button>
+        {/* Botón con Context. Descomentar para ver: */}
+        {/* <button className="button" onClick={props.remove} style={{ backgroundColor: ctx.color }}>Borrar</button> */}
     </section>
     )
 }
